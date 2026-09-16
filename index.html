@@ -3,259 +3,667 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>0PAY - Digital Financial Services</title>
+<title>0PAY - Retailer Registration</title>
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
-body{background:#f5f8fc;color:#172033}
-header{
-  background:#fff;
-  padding:16px 6%;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  box-shadow:0 2px 12px #00000012;
-  position:sticky;
-  top:0;
-  z-index:10
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
 }
-.logo{font-size:30px;font-weight:800;color:#0757d5}
-nav a{text-decoration:none;color:#222;margin-left:20px;font-weight:600}
-.hero{
-  padding:80px 6%;
-  background:linear-gradient(135deg,#0757d5,#16a5ff);
-  color:white;
-  text-align:center
+
+body {
+  background: #f3f7fc;
+  color: #172033;
+  padding: 20px 10px;
 }
-.hero h1{font-size:48px;margin-bottom:15px}
-.hero p{font-size:19px;margin-bottom:28px}
-.btn{
-  display:inline-block;
-  background:white;
-  color:#0757d5;
-  padding:13px 25px;
-  border-radius:8px;
-  text-decoration:none;
-  font-weight:bold;
-  margin:5px
+
+.container {
+  max-width: 650px;
+  margin: auto;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 5px 25px rgba(0,0,0,.08);
+  overflow: hidden;
 }
-section{padding:55px 6%}
-.title{text-align:center;margin-bottom:30px}
-.title h2{font-size:32px}
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
-  gap:20px
+
+.header {
+  background: linear-gradient(135deg,#0757d5,#159ee8);
+  color: white;
+  text-align: center;
+  padding: 28px 20px;
 }
-.card{
-  background:white;
-  padding:25px;
-  border-radius:14px;
-  box-shadow:0 5px 20px #0000000d;
-  text-align:center
+
+.logo {
+  font-size: 34px;
+  font-weight: 800;
 }
-.card h3{margin:12px 0;color:#0757d5}
-.login{
-  display:block;
-  text-decoration:none;
-  color:white;
-  background:#0757d5;
-  padding:12px;
-  border-radius:7px;
-  margin-top:15px
+
+.header p {
+  margin-top: 8px;
 }
-.k{
-  font-size:38px
+
+.form {
+  padding: 25px;
 }
-.register{
-  background:#0d1b35;
-  color:white;
-  text-align:center
+
+.section-title {
+  font-size: 19px;
+  font-weight: bold;
+  color: #0757d5;
+  margin: 22px 0 15px;
+  border-bottom: 1px solid #e3e8ef;
+  padding-bottom: 8px;
 }
-footer{
-  background:#071126;
-  color:white;
-  padding:30px 6%;
-  text-align:center
+
+.field {
+  margin-bottom: 15px;
 }
-@media(max-width:700px){
-  header{flex-direction:column;gap:12px}
-  nav a{margin:5px;font-size:13px}
-  .hero h1{font-size:36px}
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 7px;
+}
+
+.required {
+  color: red;
+}
+
+input, select {
+  width: 100%;
+  padding: 13px;
+  border: 1px solid #ccd5e0;
+  border-radius: 8px;
+  font-size: 15px;
+  outline: none;
+}
+
+input:focus, select:focus {
+  border-color: #0757d5;
+}
+
+.error {
+  color: #d00000;
+  font-size: 13px;
+  margin-top: 5px;
+  display: none;
+}
+
+.password-box {
+  position: relative;
+}
+
+.password-box button {
+  position: absolute;
+  right: 8px;
+  top: 7px;
+  border: 0;
+  background: transparent;
+  padding: 7px;
+  cursor: pointer;
+}
+
+.strength {
+  font-size: 13px;
+  margin-top: 5px;
+}
+
+.upload-info {
+  background: #f0f6ff;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 13px;
+  margin-bottom: 15px;
+}
+
+.terms {
+  display: flex;
+  gap: 9px;
+  align-items: flex-start;
+  margin: 18px 0;
+  font-size: 14px;
+}
+
+.terms input {
+  width: auto;
+  margin-top: 3px;
+}
+
+.submit {
+  width: 100%;
+  padding: 15px;
+  border: 0;
+  border-radius: 9px;
+  background: #0757d5;
+  color: white;
+  font-size: 17px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.submit:hover {
+  background: #0647ad;
+}
+
+.success {
+  display: none;
+  background: #e8f8ee;
+  color: #137333;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.footer {
+  text-align: center;
+  padding: 18px;
+  color: #667085;
+  font-size: 13px;
+}
+
+@media(max-width:500px) {
+  body {
+    padding: 0;
+  }
+
+  .container {
+    border-radius: 0;
+  }
+
+  .form {
+    padding: 18px;
+  }
 }
 </style>
 </head>
 
 <body>
 
-<header>
-  <div class="logo">0PAY</div>
+<div class="container">
 
-  <nav>
-    <a href="#services">Services</a>
-    <a href="#login">Login</a>
-    <a href="#kyc">KYC</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header>
-
-<section class="hero">
-  <h1>Welcome to 0PAY</h1>
-  <p>Digital Financial Services Platform</p>
-
-  <a href="#register" class="btn">Become a Retailer</a>
-  <a href="#login" class="btn">Login</a>
-</section>
-
-<section id="services">
-  <div class="title">
-    <h2>Our Services</h2>
-    <p>Simple and secure digital services</p>
+  <div class="header">
+    <div class="logo">0PAY</div>
+    <h2>Retailer Self-Registration</h2>
+    <p>Apply to become a 0PAY Retailer</p>
   </div>
 
-  <div class="grid">
+  <form class="form" id="registrationForm" novalidate>
 
-    <div class="card">
-      <div class="k">🏧</div>
-      <h3>AePS</h3>
-      <p>Aadhaar Enabled Payment Services</p>
+    <div id="successMessage" class="success">
+      Registration form submitted successfully.
+      Your application is pending Admin KYC verification.
     </div>
 
-    <div class="card">
-      <div class="k">💸</div>
-      <h3>Money Transfer</h3>
-      <p>Domestic Money Transfer Services</p>
+    <!-- PERSONAL DETAILS -->
+    <div class="section-title">Personal Details</div>
+
+    <div class="field">
+      <label>Full Name <span class="required">*</span></label>
+      <input type="text" id="fullName" placeholder="Enter full name">
+      <div class="error" id="fullNameError"></div>
     </div>
 
-    <div class="card">
-      <div class="k">📱</div>
-      <h3>Recharge</h3>
-      <p>Mobile & DTH Recharge</p>
+    <div class="field">
+      <label>Mobile Number <span class="required">*</span></label>
+      <input type="tel" id="mobile" maxlength="10"
+             inputmode="numeric" placeholder="10-digit mobile number">
+      <div class="error" id="mobileError"></div>
     </div>
 
-    <div class="card">
-      <div class="k">🧾</div>
-      <h3>Bill Payment</h3>
-      <p>Digital Bill Payment Services</p>
+    <div class="field">
+      <label>Email Address <span class="required">*</span></label>
+      <input type="email" id="email" placeholder="Enter email address">
+      <div class="error" id="emailError"></div>
     </div>
 
+    <div class="field">
+      <label>Date of Birth <span class="required">*</span></label>
+      <input type="date" id="dob">
+      <div class="error" id="dobError"></div>
+    </div>
+
+    <!-- SHOP DETAILS -->
+    <div class="section-title">Shop Details</div>
+
+    <div class="field">
+      <label>Shop Name <span class="required">*</span></label>
+      <input type="text" id="shopName" placeholder="Enter shop name">
+      <div class="error" id="shopNameError"></div>
+    </div>
+
+    <div class="field">
+      <label>Shop Address <span class="required">*</span></label>
+      <input type="text" id="shopAddress"
+             placeholder="Enter complete shop address">
+      <div class="error" id="shopAddressError"></div>
+    </div>
+
+    <div class="field">
+      <label>State <span class="required">*</span></label>
+      <select id="state">
+        <option value="">Select State</option>
+        <option>West Bengal</option>
+        <option>Jharkhand</option>
+        <option>Bihar</option>
+        <option>Odisha</option>
+        <option>Kerala</option>
+        <option>Other</option>
+      </select>
+      <div class="error" id="stateError"></div>
+    </div>
+
+    <div class="field">
+      <label>District <span class="required">*</span></label>
+      <input type="text" id="district" placeholder="Enter district">
+      <div class="error" id="districtError"></div>
+    </div>
+
+    <div class="field">
+      <label>PIN Code <span class="required">*</span></label>
+      <input type="text" id="pin" maxlength="6"
+             inputmode="numeric" placeholder="6-digit PIN code">
+      <div class="error" id="pinError"></div>
+    </div>
+
+    <!-- KYC -->
+    <div class="section-title">KYC Details</div>
+
+    <div class="field">
+      <label>PAN Number <span class="required">*</span></label>
+      <input type="text" id="pan" maxlength="10"
+             style="text-transform:uppercase"
+             placeholder="ABCDE1234F">
+      <div class="error" id="panError"></div>
+    </div>
+
+    <div class="upload-info">
+      KYC documents must be clear and readable.
+      Allowed formats: JPG, JPEG, PNG, PDF.
+      Maximum size: 5 MB per file.
+    </div>
+
+    <div class="field">
+      <label>PAN Card <span class="required">*</span></label>
+      <input type="file" id="panFile"
+             accept=".jpg,.jpeg,.png,.pdf">
+      <div class="error" id="panFileError"></div>
+    </div>
+
+    <div class="field">
+      <label>Address Proof <span class="required">*</span></label>
+      <input type="file" id="addressFile"
+             accept=".jpg,.jpeg,.png,.pdf">
+      <div class="error" id="addressFileError"></div>
+    </div>
+
+    <!-- BANK -->
+    <div class="section-title">Bank Details</div>
+
+    <div class="field">
+      <label>Account Holder Name <span class="required">*</span></label>
+      <input type="text" id="accountName"
+             placeholder="Enter account holder name">
+      <div class="error" id="accountNameError"></div>
+    </div>
+
+    <div class="field">
+      <label>Bank Account Number <span class="required">*</span></label>
+      <input type="text" id="accountNumber"
+             inputmode="numeric"
+             placeholder="Enter bank account number">
+      <div class="error" id="accountNumberError"></div>
+    </div>
+
+    <div class="field">
+      <label>IFSC Code <span class="required">*</span></label>
+      <input type="text" id="ifsc" maxlength="11"
+             style="text-transform:uppercase"
+             placeholder="ABCD0123456">
+      <div class="error" id="ifscError"></div>
+    </div>
+
+    <!-- LOGIN -->
+    <div class="section-title">Create Login Password</div>
+
+    <div class="field">
+      <label>Password <span class="required">*</span></label>
+
+      <div class="password-box">
+        <input type="password" id="password"
+               placeholder="Create password">
+        <button type="button"
+                onclick="togglePassword('password')">👁️</button>
+      </div>
+
+      <div class="strength" id="strength"></div>
+      <div class="error" id="passwordError"></div>
+    </div>
+
+    <div class="field">
+      <label>Confirm Password <span class="required">*</span></label>
+
+      <div class="password-box">
+        <input type="password" id="confirmPassword"
+               placeholder="Confirm password">
+        <button type="button"
+                onclick="togglePassword('confirmPassword')">👁️</button>
+      </div>
+
+      <div class="error" id="confirmPasswordError"></div>
+    </div>
+
+    <!-- TERMS -->
+    <label class="terms">
+      <input type="checkbox" id="terms">
+      <span>
+        I confirm that the information provided by me is correct and
+        I agree to the 0PAY terms, privacy policy and KYC verification
+        process.
+      </span>
+    </label>
+
+    <div class="error" id="termsError"></div>
+
+    <button type="submit" class="submit">
+      Submit Retailer Registration
+    </button>
+
+  </form>
+
+  <div class="footer">
+    © 2026 0PAY — Digital Financial Services
   </div>
-</section>
 
-<section id="login">
-  <div class="title">
-    <h2>0PAY Login</h2>
-    <p>Select your account type</p>
-  </div>
+</div>
 
-  <div class="grid">
+<script>
 
-    <div class="card">
-      <div class="k">🔐</div>
-      <h3>Admin Login</h3>
-      <p>Complete system management</p>
-      <a class="login" href="#">Admin Login</a>
-    </div>
+function showError(id, message) {
+  const el = document.getElementById(id);
+  el.textContent = message;
+  el.style.display = "block";
+}
 
-    <div class="card">
-      <div class="k">👤</div>
-      <h3>Retailer Login</h3>
-      <p>Retailer dashboard</p>
-      <a class="login" href="#">Retailer Login</a>
-    </div>
+function hideError(id) {
+  const el = document.getElementById(id);
+  el.textContent = "";
+  el.style.display = "none";
+}
 
-    <div class="card">
-      <div class="k">🏢</div>
-      <h3>Distributor Login</h3>
-      <p>Distributor dashboard</p>
-      <a class="login" href="#">Distributor Login</a>
-    </div>
+function validateFile(id, errorId) {
 
-    <div class="card">
-      <div class="k">🏢</div>
-      <h3>Master Distributor</h3>
-      <p>Master distributor dashboard</p>
-      <a class="login" href="#">MD Login</a>
-    </div>
+  const file = document.getElementById(id).files[0];
 
-    <div class="card">
-      <div class="k">🏢</div>
-      <h3>Super Distributor</h3>
-      <p>Super distributor dashboard</p>
-      <a class="login" href="#">SD Login</a>
-    </div>
+  if (!file) {
+    showError(errorId, "Please upload this document.");
+    return false;
+  }
 
-    <div class="card">
-      <div class="k">👨‍💼</div>
-      <h3>Sales Manager</h3>
-      <p>Sales management dashboard</p>
-      <a class="login" href="#">Sales Manager Login</a>
-    </div>
+  const allowed = [
+    "image/jpeg",
+    "image/png",
+    "application/pdf"
+  ];
 
-  </div>
-</section>
+  if (!allowed.includes(file.type)) {
+    showError(errorId, "Only JPG, PNG or PDF files are allowed.");
+    return false;
+  }
 
-<section id="kyc">
-  <div class="title">
-    <h2>KYC & Courses</h2>
-    <p>Complete verification and learn digital financial services</p>
-  </div>
+  if (file.size > 5 * 1024 * 1024) {
+    showError(errorId, "File size must be 5 MB or less.");
+    return false;
+  }
 
-  <div class="grid">
+  hideError(errorId);
+  return true;
+}
 
-    <div class="card">
-      <div class="k">🪪</div>
-      <h3>Retailer KYC</h3>
-      <p>Submit documents for retailer verification.</p>
-      <a class="login" href="#">Start KYC</a>
-    </div>
+function togglePassword(id) {
+  const input = document.getElementById(id);
 
-    <div class="card">
-      <div class="k">📄</div>
-      <h3>Distributor KYC</h3>
-      <p>Distributor verification and documentation.</p>
-      <a class="login" href="#">Start KYC</a>
-    </div>
+  input.type =
+    input.type === "password"
+      ? "text"
+      : "password";
+}
 
-    <div class="card">
-      <div class="k">🎓</div>
-      <h3>KYC Courses</h3>
-      <p>Learn about KYC and digital financial services.</p>
-      <a class="login" href="#">View Courses</a>
-    </div>
+document.getElementById("password").addEventListener("input", function() {
 
-  </div>
-</section>
+  const password = this.value;
+  const strength = document.getElementById("strength");
 
-<section class="register" id="register">
-  <h2>Join 0PAY</h2>
-  <p style="margin:15px 0 25px">
-    Become a 0PAY Retailer or Distributor
-  </p>
+  if (!password) {
+    strength.textContent = "";
+    return;
+  }
 
-  <a href="#" class="btn">Retailer Registration</a>
-  <a href="#" class="btn">Distributor Registration</a>
-</section>
+  if (password.length < 6) {
+    strength.textContent = "Weak password";
+  }
+  else if (
+    password.length >= 8 &&
+    /[A-Z]/.test(password) &&
+    /[a-z]/.test(password) &&
+    /\d/.test(password)
+  ) {
+    strength.textContent = "Strong password";
+  }
+  else {
+    strength.textContent = "Medium password";
+  }
+});
 
-<section id="contact">
-  <div class="title">
-    <h2>Contact 0PAY</h2>
-    <p>For registration and support</p>
-  </div>
+document.getElementById("registrationForm")
+.addEventListener("submit", function(e) {
 
-  <div class="card">
-    <h3>Customer Support</h3>
-    <p>Email: support@0pay.example</p>
-    <p>Business Support Available</p>
-  </div>
-</section>
+  e.preventDefault();
 
-<footer>
-  <h2>0PAY</h2>
-  <p>Digital Financial Services Platform</p>
-  <br>
-  <p>© 2026 0PAY. All Rights Reserved.</p>
-</footer>
+  let valid = true;
+
+  const fullName =
+    document.getElementById("fullName").value.trim();
+
+  const mobile =
+    document.getElementById("mobile").value.trim();
+
+  const email =
+    document.getElementById("email").value.trim();
+
+  const dob =
+    document.getElementById("dob").value;
+
+  const shopName =
+    document.getElementById("shopName").value.trim();
+
+  const shopAddress =
+    document.getElementById("shopAddress").value.trim();
+
+  const state =
+    document.getElementById("state").value;
+
+  const district =
+    document.getElementById("district").value.trim();
+
+  const pin =
+    document.getElementById("pin").value.trim();
+
+  const pan =
+    document.getElementById("pan").value.trim().toUpperCase();
+
+  const accountName =
+    document.getElementById("accountName").value.trim();
+
+  const accountNumber =
+    document.getElementById("accountNumber").value.trim();
+
+  const ifsc =
+    document.getElementById("ifsc").value.trim().toUpperCase();
+
+  const password =
+    document.getElementById("password").value;
+
+  const confirmPassword =
+    document.getElementById("confirmPassword").value;
+
+  const terms =
+    document.getElementById("terms").checked;
+
+  /* Full Name */
+  if (fullName.length < 3) {
+    showError("fullNameError",
+      "Please enter your full name.");
+    valid = false;
+  } else hideError("fullNameError");
+
+  /* Mobile */
+  if (!/^[6-9]\d{9}$/.test(mobile)) {
+    showError("mobileError",
+      "Enter a valid 10-digit Indian mobile number.");
+    valid = false;
+  } else hideError("mobileError");
+
+  /* Email */
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    showError("emailError",
+      "Enter a valid email address.");
+    valid = false;
+  } else hideError("emailError");
+
+  /* DOB */
+  if (!dob) {
+    showError("dobError",
+      "Please select your date of birth.");
+    valid = false;
+  } else hideError("dobError");
+
+  /* Shop */
+  if (shopName.length < 2) {
+    showError("shopNameError",
+      "Enter your shop name.");
+    valid = false;
+  } else hideError("shopNameError");
+
+  if (shopAddress.length < 10) {
+    showError("shopAddressError",
+      "Enter complete shop address.");
+    valid = false;
+  } else hideError("shopAddressError");
+
+  /* State */
+  if (!state) {
+    showError("stateError",
+      "Please select your state.");
+    valid = false;
+  } else hideError("stateError");
+
+  /* District */
+  if (district.length < 2) {
+    showError("districtError",
+      "Enter your district.");
+    valid = false;
+  } else hideError("districtError");
+
+  /* PIN */
+  if (!/^\d{6}$/.test(pin)) {
+    showError("pinError",
+      "Enter a valid 6-digit PIN code.");
+    valid = false;
+  } else hideError("pinError");
+
+  /* PAN */
+  if (!/^[A-Z]{5}[0-9]{4}[A-Z]$/.test(pan)) {
+    showError("panError",
+      "Enter a valid PAN format.");
+    valid = false;
+  } else hideError("panError");
+
+  /* Files */
+  if (!validateFile("panFile", "panFileError"))
+    valid = false;
+
+  if (!validateFile("addressFile", "addressFileError"))
+    valid = false;
+
+  /* Bank */
+  if (accountName.length < 3) {
+    showError("accountNameError",
+      "Enter account holder name.");
+    valid = false;
+  } else hideError("accountNameError");
+
+  if (!/^\d{9,18}$/.test(accountNumber)) {
+    showError("accountNumberError",
+      "Enter a valid bank account number.");
+    valid = false;
+  } else hideError("accountNumberError");
+
+  if (!/^[A-Z]{4}0[A-Z0-9]{6}$/.test(ifsc)) {
+    showError("ifscError",
+      "Enter a valid IFSC code.");
+    valid = false;
+  } else hideError("ifscError");
+
+  /* Password */
+  if (
+    password.length < 8 ||
+    !/[A-Z]/.test(password) ||
+    !/[a-z]/.test(password) ||
+    !/\d/.test(password)
+  ) {
+    showError(
+      "passwordError",
+      "Password must contain 8+ characters, uppercase, lowercase and number."
+    );
+    valid = false;
+  } else hideError("passwordError");
+
+  /* Confirm Password */
+  if (password !== confirmPassword) {
+    showError("confirmPasswordError",
+      "Passwords do not match.");
+    valid = false;
+  } else hideError("confirmPasswordError");
+
+  /* Terms */
+  if (!terms) {
+    showError("termsError",
+      "Please accept the terms and conditions.");
+    valid = false;
+  } else hideError("termsError");
+
+  /* SUCCESS */
+  if (valid) {
+
+    document.getElementById("successMessage").style.display = "block";
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+
+    /*
+      IMPORTANT:
+      Connect this form to your backend/API here.
+
+      Example:
+      fetch("/api/retailer/register", {
+        method: "POST",
+        body: new FormData(this)
+      });
+    */
+
+    this.reset();
+    document.getElementById("strength").textContent = "";
+  }
+
+});
+
+</script>
 
 </body>
 </html>
