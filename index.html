@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>0PAY - Digital Financial Services</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+body{background:#f5f8fc;color:#172033}
+header{
+  background:#fff;
+  padding:16px 6%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  box-shadow:0 2px 12px #00000012;
+  position:sticky;
+  top:0;
+  z-index:10
+}
+.logo{font-size:30px;font-weight:800;color:#0757d5}
+nav a{text-decoration:none;color:#222;margin-left:20px;font-weight:600}
+.hero{
+  padding:80px 6%;
+  background:linear-gradient(135deg,#0757d5,#16a5ff);
+  color:white;
+  text-align:center
+}
+.hero h1{font-size:48px;margin-bottom:15px}
+.hero p{font-size:19px;margin-bottom:28px}
+.btn{
+  display:inline-block;
+  background:white;
+  color:#0757d5;
+  padding:13px 25px;
+  border-radius:8px;
+  text-decoration:none;
+  font-weight:bold;
+  margin:5px
+}
+section{padding:55px 6%}
+.title{text-align:center;margin-bottom:30px}
+.title h2{font-size:32px}
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
+  gap:20px
+}
+.card{
+  background:white;
+  padding:25px;
+  border-radius:14px;
+  box-shadow:0 5px 20px #0000000d;
+  text-align:center
+}
+.card h3{margin:12px 0;color:#0757d5}
+.login{
+  display:block;
+  text-decoration:none;
+  color:white;
+  background:#0757d5;
+  padding:12px;
+  border-radius:7px;
+  margin-top:15px
+}
+.k{
+  font-size:38px
+}
+.register{
+  background:#0d1b35;
+  color:white;
+  text-align:center
+}
+footer{
+  background:#071126;
+  color:white;
+  padding:30px 6%;
+  text-align:center
+}
+@media(max-width:700px){
+  header{flex-direction:column;gap:12px}
+  nav a{margin:5px;font-size:13px}
+  .hero h1{font-size:36px}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">0PAY</div>
+
+  <nav>
+    <a href="#services">Services</a>
+    <a href="#login">Login</a>
+    <a href="#kyc">KYC</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h1>Welcome to 0PAY</h1>
+  <p>Digital Financial Services Platform</p>
+
+  <a href="#register" class="btn">Become a Retailer</a>
+  <a href="#login" class="btn">Login</a>
+</section>
+
+<section id="services">
+  <div class="title">
+    <h2>Our Services</h2>
+    <p>Simple and secure digital services</p>
+  </div>
+
+  <div class="grid">
+
+    <div class="card">
+      <div class="k">🏧</div>
+      <h3>AePS</h3>
+      <p>Aadhaar Enabled Payment Services</p>
+    </div>
+
+    <div class="card">
+      <div class="k">💸</div>
+      <h3>Money Transfer</h3>
+      <p>Domestic Money Transfer Services</p>
+    </div>
+
+    <div class="card">
+      <div class="k">📱</div>
+      <h3>Recharge</h3>
+      <p>Mobile & DTH Recharge</p>
+    </div>
+
+    <div class="card">
+      <div class="k">🧾</div>
+      <h3>Bill Payment</h3>
+      <p>Digital Bill Payment Services</p>
+    </div>
+
+  </div>
+</section>
+
+<section id="login">
+  <div class="title">
+    <h2>0PAY Login</h2>
+    <p>Select your account type</p>
+  </div>
+
+  <div class="grid">
+
+    <div class="card">
+      <div class="k">🔐</div>
+      <h3>Admin Login</h3>
+      <p>Complete system management</p>
+      <a class="login" href="#">Admin Login</a>
+    </div>
+
+    <div class="card">
+      <div class="k">👤</div>
+      <h3>Retailer Login</h3>
+      <p>Retailer dashboard</p>
+      <a class="login" href="#">Retailer Login</a>
+    </div>
+
+    <div class="card">
+      <div class="k">🏢</div>
+      <h3>Distributor Login</h3>
+      <p>Distributor dashboard</p>
+      <a class="login" href="#">Distributor Login</a>
+    </div>
+
+    <div class="card">
+      <div class="k">🏢</div>
+      <h3>Master Distributor</h3>
+      <p>Master distributor dashboard</p>
+      <a class="login" href="#">MD Login</a>
+    </div>
+
+    <div class="card">
+      <div class="k">🏢</div>
+      <h3>Super Distributor</h3>
+      <p>Super distributor dashboard</p>
+      <a class="login" href="#">SD Login</a>
+    </div>
+
+    <div class="card">
+      <div class="k">👨‍💼</div>
+      <h3>Sales Manager</h3>
+      <p>Sales management dashboard</p>
+      <a class="login" href="#">Sales Manager Login</a>
+    </div>
+
+  </div>
+</section>
+
+<section id="kyc">
+  <div class="title">
+    <h2>KYC & Courses</h2>
+    <p>Complete verification and learn digital financial services</p>
+  </div>
+
+  <div class="grid">
+
+    <div class="card">
+      <div class="k">🪪</div>
+      <h3>Retailer KYC</h3>
+      <p>Submit documents for retailer verification.</p>
+      <a class="login" href="#">Start KYC</a>
+    </div>
+
+    <div class="card">
+      <div class="k">📄</div>
+      <h3>Distributor KYC</h3>
+      <p>Distributor verification and documentation.</p>
+      <a class="login" href="#">Start KYC</a>
+    </div>
+
+    <div class="card">
+      <div class="k">🎓</div>
+      <h3>KYC Courses</h3>
+      <p>Learn about KYC and digital financial services.</p>
+      <a class="login" href="#">View Courses</a>
+    </div>
+
+  </div>
+</section>
+
+<section class="register" id="register">
+  <h2>Join 0PAY</h2>
+  <p style="margin:15px 0 25px">
+    Become a 0PAY Retailer or Distributor
+  </p>
+
+  <a href="#" class="btn">Retailer Registration</a>
+  <a href="#" class="btn">Distributor Registration</a>
+</section>
+
+<section id="contact">
+  <div class="title">
+    <h2>Contact 0PAY</h2>
+    <p>For registration and support</p>
+  </div>
+
+  <div class="card">
+    <h3>Customer Support</h3>
+    <p>Email: support@0pay.example</p>
+    <p>Business Support Available</p>
+  </div>
+</section>
+
+<footer>
+  <h2>0PAY</h2>
+  <p>Digital Financial Services Platform</p>
+  <br>
+  <p>© 2026 0PAY. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>
